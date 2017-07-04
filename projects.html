@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>My Projects</title>
+    <!-- Import Mini.css -->
+    <link rel="stylesheet" href="css/mini-default.min.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<script>
+    PROJECTS = [
+        {
+            title: "Swarm",
+            name: "swarm",
+            desc: "My custom swarm algorithims, roughtly based on <strong>Boids</strong>",
+            lastDate: "7-4-17"
+        },
+        {
+            title: "Node Learning",
+            name: "nodeplay",
+            desc: "My progress in learning how to use <strong>Node.js</strong>",
+            lastDate: "5-25-17"
+        },
+        {
+            title: "Personal Website",
+            name: "",
+            desc: "My personal website & WhoAmI list",
+            lastDate: "5-25-17"
+        },
+        {
+            title: "Genetic Algorithims",
+            name: "GeneticAlgorithims",
+            desc: "My Work in evolutionary algorithims",
+            lastDate: "5-16-17"
+        }
+    ]
+
+</script>
+
+<header class="sticky" style="padding: 15px;">
+    <a href="#" rel="noopener" class="logo">My Projects</a>
+    <a href="#" rel="noopener" class="button">Homepage</a>
+    <a href="#" rel="noopener" class="button">Who Am I</a>
+    <a href="#" rel="noopener" class="button">Github</a>
+</header>
+
+<body>
+    <div class="row">
+        <div class="col-sm-12 col-md-10 col-md-offset-1">
+            <br/>
+            <h3>Seth Parrish</h3>
+            <hr/>
+            <pre>Here is a friendly list of projects I have, and am working on</pre>
+
+        </div>
+    </div>
+
+    <div class="col-sm-12 col-md-10 col-md-offset-1">
+        <div class="card fluid" id="TheList">
+            <div class="section dark">
+                <!--Could use: double-padded can can use dark, or darker-->
+                <p>Content</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    var list = document.getElementById("TheList");
+    for (var i = 0; i < PROJECTS.length; i++) {
+        var curr = PROJECTS[i];
+        var attach = "<div class='section dark'>" +
+            "<h3>" + curr.title + "</h3>" +
+            "<p>" + curr.desc + "</p>" +
+            "<p><a href='https://setherizor.github.io/" + curr.name +
+            "' rel='noopener'>Find it here</a>" + "<br>" +
+            "Last Modified: " + curr.lastDate +
+            "</p></div>";
+        if (i != PROJECTS.length - 1) attach += "<br>";
+        list.innerHTML += attach;
+    }
+
+</script>
+
+<footer class="row">
+    <div class="col-sm-12 col-md-10 col-md-offset-1" style="text-align: center; padding: 20px;">
+        Copyright &copy; Setherizor 2017
+    </div>
+</footer>
+
+</html>
