@@ -13,7 +13,7 @@
 
         var xobj = new XMLHttpRequest();
         xobj.overrideMimeType("application/json");
-        xobj.open('GET', 'projects.json', true); // Replace 'my_data' with the path to your file
+        xobj.open('GET', './projects.json', true); // Replace 'my_data' with the path to your file
         xobj.onreadystatechange = function () {
             if (xobj.readyState == 4 && xobj.status == "200") {
                 // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
@@ -54,7 +54,7 @@
         </div>
     </div>
 
-    <div class="col-sm-12 col-md-10 col-md-offset-1">
+    <div style="display: none;" class="col-sm-12 col-md-10 col-md-offset-1">
         <div class="card fluid" id="TheList">
             <div class="section dark">
                 <!--Could use: double-padded can can use dark, or darker-->
@@ -70,7 +70,7 @@
         for (var i = 0; i < projects.length; i++) {
             var curr = projects[i];
             var attach = '<div class="section dark">' +
-                "<h3>" + curr.title + "</h3>" + "<h5>   " + curr.name + "</h5>" +
+                "<h3>" + curr.title + "</h3>" +
                 "<p>" + curr.desc + "</p>" +
                 "<p><a href='" + curr.domain +
                 "' rel='noopener'>"+ curr.domain +"</a>" + "<br>" +

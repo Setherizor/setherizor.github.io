@@ -1,16 +1,16 @@
 [{
+    "title": "Node.js Learning",
+    "name": "nodeplay",
+    "desc": "My journey in learning how to use <strong>Node.js</strong>",
+    "domain": "https://sethparrish.herokuapp.com/",
+    "lastDate": "7-5-17"
+},
+{
     "title": "Swarm",
     "name": "swarm",
     "desc": "My custom swarm algorithims, roughtly based on <strong>Boids</strong>",
     "domain": "setherizor.github.io/swarm",
     "lastDate": "7-4-17"
-},
-{
-    "title": "Node,js Learning",
-    "name": "nodeplay",
-    "desc": "My progress in learning how to use <strong>Node.js</strong>",
-    "domain": "https://sethparrish.herokuapp.com/",
-    "lastDate": "7-5-17"
 },
 {
     "title": "Personal Website",
