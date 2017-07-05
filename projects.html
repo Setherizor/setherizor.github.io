@@ -11,6 +11,7 @@
 <script>
     GIT = "https://github.com/Setherizor/";
     PERSONAL = "https://setherizor.github.io/";
+    PROJECTS = 0;
 
     function loadJSON(callback) {
 
@@ -26,13 +27,15 @@
         xobj.send(null);
     }
 
-    var PROJECTS = function () {
+    var getEm = function () {
         loadJSON(function (response) {
             // Parse JSON string into object
             var actual_JSON = JSON.parse(response);
             return actual_JSON;
         });
     }
+
+    PROJECTS = getEm();
     //require('./projects.json');
 
 </script>
