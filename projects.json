@@ -2,27 +2,27 @@
     "title": "Swarm",
     "name": "swarm",
     "desc": "My custom swarm algorithims, roughtly based on <strong>Boids</strong>",
-    "domain": "eval(PERSONAL)",
+    "domain": "PERSONAL",
     "lastDate": "7-4-17"
 },
 {
     "title": "Node Learning",
     "name": "nodeplay",
     "desc": "My progress in learning how to use <strong>Node.js</strong>",
-    "domain": "eval(GIT)",
+    "domain": "GIT",
     "lastDate": "5-25-17"
 },
 {
     "title": "Personal Website",
     "name": "",
     "desc": "My personal website & WhoAmI list",
-    "domain": "eval(PERSONAL)",
+    "domain": "PERSONAL",
     "lastDate": "5-25-17"
 },
 {
     "title": "Genetic Algorithims",
     "name": "GeneticAlgorithims",
     "desc": "My Work in evolutionary algorithims",
-    "domain": "eval(PERSONAL)",
+    "domain": "PERSONAL",
     "lastDate": "5-16-17"
 }]
