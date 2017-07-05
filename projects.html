@@ -10,7 +10,6 @@
 
 <script>
     function loadJSON(callback) {
-
         var xobj = new XMLHttpRequest();
         xobj.overrideMimeType("application/json");
         xobj.open('GET', 'projects.json', true); // Replace 'my_data' with the path to your file
@@ -27,15 +26,13 @@
         loadJSON(function (response) {
             // Parse JSON string into object
             var actual_JSON = JSON.parse(response);
-            var projects = actual_JSON;
+            var p = actual_JSON;
             console.log("projects got and bout sent")
-            all(projects);
+            all(p);
         });
     }
 
-    getEm();
-    //require('./projects.json');
-
+   getEm();
 </script>
 
 <header class="sticky" style="padding: 15px;">
@@ -56,9 +53,9 @@
         </div>
     </div>
 
-    <div style="display: none;" class="col-sm-12 col-md-10 col-md-offset-1">
+    <div class="col-sm-12 col-md-10 col-md-offset-1">
         <div class="card fluid" id="TheList">
-            <div class="section dark">
+            <div style="display: none;" class="section dark">
                 <!--Could use: double-padded can can use dark, or darker-->
                 <p>Content</p>
             </div>
@@ -67,18 +64,16 @@
 </body>
 
 <script>
-    function all(projects) {
+    function all(p) {
         var list = document.getElementById("TheList");
-        for (var i = 0; i < projects.length; i++) {
-            var curr = projects[i];
+        for (var i = 0; i < p.length; i++) {
+            var curr = p[i];
             var attach = '<div class="section dark">' +
-                "<h3>" + curr.title + "</h3>" +
+                "<h3>" + curr.title + "</h3>" + 
                 "<p>" + curr.desc + "</p>" +
-                "<p><a href='" + curr.domain +
-                "' rel='noopener'>"+ curr.domain +"</a>" + "<br>" +
-                "Last Modified: " + curr.lastDate +
-                "</p></div>";
-            if (i != projects.length - 1) attach += "<br>";
+                "<p><a href='" + curr.domain + "' rel='noopener'>" + curr.domain + "</a>" + "<br>" +
+                "Last Modified: " + curr.lastDate + "</p></div>";
+            if (i != p.length - 1) attach += "<br>";
             list.innerHTML += attach;
         }
     }
