@@ -31,11 +31,12 @@
         loadJSON(function (response) {
             // Parse JSON string into object
             var actual_JSON = JSON.parse(response);
-            return actual_JSON;
+            PROJECTS = actual_JSON;
+            all();
         });
     }
 
-    PROJECTS = getEm();
+    getEm();
     //require('./projects.json');
 
 </script>
@@ -69,18 +70,20 @@
 </body>
 
 <script>
-    var list = document.getElementById("TheList");
-    for (var i = 0; i < PROJECTS.length; i++) {
-        var curr = PROJECTS[i];
-        var attach = '<div class="section dark">' +
-            "<h3>" + curr.title + "</h3>" +
-            "<p>" + curr.desc + "</p>" +
-            "<p><a href='" + curr.domain + curr.name +
-            "' rel='noopener'>Find it here</a>" + "<br>" +
-            "Last Modified: " + curr.lastDate +
-            "</p></div>";
-        if (i != PROJECTS.length - 1) attach += "<br>";
-        list.innerHTML += attach;
+    function all() {
+        var list = document.getElementById("TheList");
+        for (var i = 0; i < PROJECTS.length; i++) {
+            var curr = PROJECTS[i];
+            var attach = '<div class="section dark">' +
+                "<h3>" + curr.title + "</h3>" +
+                "<p>" + curr.desc + "</p>" +
+                "<p><a href='" + curr.domain + curr.name +
+                "' rel='noopener'>Find it here</a>" + "<br>" +
+                "Last Modified: " + curr.lastDate +
+                "</p></div>";
+            if (i != PROJECTS.length - 1) attach += "<br>";
+            list.innerHTML += attach;
+        }
     }
 
 </script>
