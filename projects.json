@@ -1,8 +1,15 @@
 [{
+    "title": "Heroku",
+    "name": "heroku",
+    "desc": "My journey in learning how to use <strong>Heroku Apps</strong>",
+    "domain": "https://sethparrish.herokuapp.com",
+    "lastDate": "7-5-17"
+},
+{
     "title": "Node.js Learning",
     "name": "nodeplay",
     "desc": "My journey in learning how to use <strong>Node.js</strong>",
-    "domain": "https://sethparrish.herokuapp.com/",
+    "domain": "https://github.com/Setherizor/nodeplay",
     "lastDate": "7-5-17"
 },
 {
