@@ -76,6 +76,8 @@ body {
 
 h1 {
     /* TRANSFORMS */
+    margin: 10px;
+    padding-bottom: 15px;
     text-transform: uppercase;
     text-align: center;
     /* FONT SETTINGS */
@@ -88,7 +90,7 @@ h1 {
     -webkit-text-fill-color: transparent;
     background-size: cover;
     background-position: center;
-    background-image: url(https://lh3.googleusercontent.com/AcOlEwJftAuEYJROkG3ZK1JxQyEjpaaNLbvU8gpUPEMvWDYNNEMovqcNZ9Ml86Ze3CGJiIJ_6iwluq_Bxa_fFSRedQfMynVoriPoQ_8beuZgNYr2Y_Wx0ig4vwQ0VG-lWZ4GW7EMVnGbSwbb7TiuJWMv6A7zJyPav5Z09s479kYqeUZ74-b1WlS54GeoksNOLCGLHutmYviSUNwAX6VUfHq-XDjGTsQVTQ6qCyVw1mbjuE6W3kWb9dSzT9EmrRlDykQnt5Mk_N_UgHGJ9EDPuAJLfbSBNyEQnySqMIJ6GFazlznyyHxWmeTpAfofM5VVpn8uO7806FrmOy2YX7B8wIi5MpoBkoPOI23Mjki6cq9id50S43caYkUU70vHi3Wd6utb1kVLvCME25xxcBV1Qf44AH_O9FNEU3aMtG2VY_KxFq_ejOu_eZvRgXSl4-fW8gw7Nl-P3sLa9hePddoOkRllU-IK62eKrTI-gTCdHD3v1xV3xSkvZznTIOBYBdoMuBmvbyr25oJNZNqIun0sT0LmEsVn1SD1zl_dMB6bY54fM00XM_YcdyhUySiZfW7I1-CJokYof_wj8-AnBYm1seOUihPdjiTsKgrUs8xJFfBI4vUDng=w1586-h892-no);
+    background-image: url(./mountains.jpg);
 }
 
 h2 {
