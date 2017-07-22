@@ -8,33 +8,6 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 
-<script>
-    function loadJSON(callback) {
-        var xobj = new XMLHttpRequest();
-        xobj.overrideMimeType("application/json");
-        xobj.open('GET', 'projects.json', true); // Replace 'my_data' with the path to your file
-        xobj.onreadystatechange = function () {
-            if (xobj.readyState == 4 && xobj.status == "200") {
-                // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-                console.log(xobj.responseText);
-                callback(xobj.responseText);
-            }
-        };
-        xobj.send(null);
-    }
-    var getEm = function () {
-        loadJSON(function (response) {
-            // Parse JSON string into object
-            var actual_JSON = JSON.parse(response);
-            var p = actual_JSON;
-            console.log("projects got and bout sent")
-            all(p);
-        });
-    }
-
-   getEm();
-</script>
-
 <header class="sticky" style="padding: 15px;">
     <a href="#" rel="noopener" class="logo">My Projects</a>
     <a href="#" rel="noopener" class="button">Homepage</a>
@@ -63,21 +36,7 @@
     </div>
 </body>
 
-<script>
-    function all(p) {
-        var list = document.getElementById("TheList");
-        for (var i = 0; i < p.length; i++) {
-            var curr = p[i];
-            var attach = '<div class="section dark">' +
-                "<h3>" + curr.title + "</h3>" + 
-                "<p>" + curr.desc + "</p>" +
-                "<p><a href='" + curr.domain + "' rel='noopener'>" + curr.domain + "</a>" + "<br>" +
-                "Last Modified: " + curr.lastDate + "</p></div>";
-            if (i != p.length - 1) attach += "<br>";
-            list.innerHTML += attach;
-        }
-    }
-</script>
+<script src="/js/requests.js"></script>
 
 <footer class="row">
     <div class="col-sm-12 col-md-10 col-md-offset-1" style="text-align: center; padding: 20px;">
