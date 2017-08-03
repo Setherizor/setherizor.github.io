@@ -18,16 +18,9 @@ function putOnPage (cards) {
   }
 }
 function generalRequest (callback, url) {
-  var xobj = new XMLHttpRequest()
-  xobj.overrideMimeType('application/json')
-  xobj.open('GET', url, true)
-  xobj.onreadystatechange = function () {
-    if (xobj.readyState === 4 && xobj.status === 200) {
-      // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-      callback(xobj.responseText)
-    }
-  }
-  xobj.send(null)
+  fetch(url)
+    .then((resp) => resp.json())
+    .then((data) => callback(data))
 }
 function trelloJSON (callback) {
   var url = `https://api.trello.com/1/boards/${BOARD_ID}/cards?fields=name,url,idList,desc,dateLastActivity,?&key=${TRELLO_API}&token=${TRELLO_TOKEN}`
@@ -47,8 +40,7 @@ var getAttachments = function (callback, cards) {
 var useThem = function (cards) {
   cards.map(function (card, index) {
     getAttachments(function (response) {
-      var actual = JSON.parse(response)
-      cards[index].urls = actual.map(function (attachment) {
+      cards[index].urls = response.map(function (attachment) {
         return attachment.url
       })
       putOnPage([cards[index]])
@@ -57,8 +49,7 @@ var useThem = function (cards) {
 }
 var getThem = function () {
   trelloJSON(function (response) {
-    var allJson = JSON.parse(response)
-    var cards = allJson.filter(function (card) {
+    var cards = response.filter(function (card) {
       return card.idList === PROJECT_LIST_ID
     })
     useThem(cards)
