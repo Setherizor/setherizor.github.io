@@ -58,7 +58,7 @@ const websites = [
 
 const putOnPage = (websites) => {
   const parent = document.getElementById('parent')
-  websites.map((item) => {
+  websites.forEach((item) => {
     const attach = `<a href="https://${item.url}" rel="noopener" id="child" class="fa ${item.icon} fa-3x"></a>`
     parent.innerHTML += attach
   })
