@@ -24,13 +24,15 @@ const contacts = [
   { id: 3, name: 'Timmy Doe', phone: '111-222-5555' }
 ]
 
-[
+const comps = [
   { name: 'hero', template: '#hero' },
   { name: 's-footer', template: '#footer' },
   {
     name: 'info', template: '#info', methods: { text: (param) => { return store.state.text[param] } }
   }
-].map(e => {
+]
+
+comps.map(e => {
   Vue.component(e.name, {
     template: e.template,
     methods: e.methods || {}

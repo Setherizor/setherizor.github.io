@@ -51,7 +51,7 @@ const websites = [
   },
   {
     name: 'Personal Site',
-    url: 'Setherizor.github.o',
+    url: 'Setherizor.github.io',
     icon: 'fa-desktop'
   }
 ]
