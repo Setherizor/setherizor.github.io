@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Seths Personal Site</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons'>
+    <link rel='stylesheet prefetch' href='http://unpkg.com/vuetify/dist/vuetify.min.css'>
+    <link rel="shortcut icon" href="https://secure.gravatar.com/avatar/f51d027fb674bba15df8fbe8451d7d23" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <script type="text/x-template" id="hero">
+        <v-parallax src="https://raw.githubusercontent.com/vuetifyjs/parallax-starter/master/template/assets/hero.jpeg" height="300">
+            <v-layout column align-center justify-center class="white--text">
+                <div class="gradient-border" id="box">
+                    {{ $store.state.author }}
+                </div>
+            </v-layout>
+        </v-parallax>
+    </script>
+
+    <script type="text/x-template" id="terminal">
+        <v-flex md6 sm10 xs12 offset-md3 offset-sm1 offset-xs0>
+            <div class="terminal">
+                <div class="bar">
+                    <div class="btns"></div>
+                </div>
+                <div class="tbody"> λ <span class="command">echo $FAVQUOTE</span>
+                    <div class="comment">"I have no special talent. I am only passionately curious." - Albert Einstein</div> λ <span class="command">alias daily= 'sudo me -r * && echo "You're amazing."</span><br> λ <span class="command">echo "Never Give Up" > consciousness.js</span>                <br>
+                    <div class="comment"> File Write Successful </div>
+                    <div class="prompt">λ <span class="command">What's next...</span> <span class="pulse">_</span></div>
+                </div>
+            </div>
+        </v-flex>
+    </script>
+    <script type="text/x-template" id="info">
+        <v-flex md6 sm10 xs12 offset-md3 offset-sm1 offset-xs0>
+            <v-card class="elevation-0 transparent">
+                <v-card-text class="subheading">
+                    <blockquote>{{ text("favquote") }}</blockquote>
+                    <div>
+                        <p>{{ text("intro") }}</p>
+                    </div>
+                    <blockquote>{{ text("quote1") }}</blockquote>
+
+                    <v-card-media src="css/UwharrieClouds.jpg" height="200px">
+                    </v-card-media> <br>
+                    <div>
+                        <p>{{ text("outro") }}</p>
+                    </div>
+                    <blockquote>{{ text("quote2") }}</blockquote>
+                </v-card-text>
+            </v-card>
+        </v-flex>
+    </script>
+    <script type="text/x-template" id="footer">
+        <v-footer app>
+            <v-flex xs12>
+                <div class="white--text text-xs-center">
+                    SETH PARRISH <br> {{ new Date().getFullYear() }}
+                </div>
+            </v-flex>
+        </v-footer>
+    </script>
+    <script type="text/x-template" id="contacts">
+        <v-layout row>
+            <v-flex xs12 sm6 offset-sm3>
+                <v-card>
+                    <v-list two-line>
+                        <v-list-tile avatar v-for="contact in contacts" v-bind:key="contact.id">
+                            <v-list-tile-avatar>
+                                <v-icon class="blue white--text">face</v-icon>
+                            </v-list-tile-avatar>
+                            <v-list-tile-content>
+                                <v-list-tile-title>{{ contact.name }}</v-list-tile-title>
+                                <v-list-tile-sub-title>{{ contact.phone }}</v-list-tile-sub-title>
+                            </v-list-tile-content>
+                            <v-list-tile-action>
+                                <v-btn :to="'/contacts/' + contact.id" icon ripple>
+                                    <v-icon class="grey--text text--lighten-1">info</v-icon>
+                                </v-btn>
+                            </v-list-tile-action>
+                        </v-list-tile>
+                    </v-list>
+                </v-card>
+            </v-flex>
+        </v-layout>
+    </script>
+    <script type="text/x-template" id="contact">
+        <v-layout>
+            <v-flex xs12 sm6 offset-sm3>
+                <v-card>
+                    <v-card-media src="//s3-us-west-2.amazonaws.com/s.cdpn.io/1032908/desert.jpg" height="200px">
+                    </v-card-media>
+                    <v-card-title primary-title>
+                        <div>
+                            <h3 class="headline mb-0">{{ contact.name }}</h3>
+                            <p class="text-lg-center">{{ contact.phone }}</p>
+                        </div>
+                    </v-card-title>
+                    <v-card-actions>
+                        <v-btn flat class="orange--text" to="/c">Back</v-btn>
+                    </v-card-actions>
+                </v-card>
+            </v-flex>
+        </v-layout>
+    </script>
+
+    <body>
+        <v-app id="app" v-cloak dark>
+            <hero></hero>
+            <main>
+                <v-content>
+                    <info></info>
+                    <v-container fluid="fluid" class="text-xs-center" fluid>
+                        <router-view></router-view>
+                        <br>
+                        <br>
+                        <v-btn v-for="b in $store.state.buttons" :key="b.index" color="primary" dark round large :href=b.url target="_self" rel="noopener">
+                            {{ b.name }} </v-btn>
+                    </v-container>
+                    <s-footer></s-footer>
+                </v-content>
+            </main>
+        </v-app>
+    </body>
+    <script src='http://unpkg.com/vue'></script>
+    <script src='http://unpkg.com/vuetify/dist/vuetify.min.js'></script>
+    <script src='http://unpkg.com/vuex'></script>
+    <script src='http://unpkg.com/vue-router'></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
