@@ -5,8 +5,8 @@ const BOARD_ID = 'JwRH1hMD'
 
 /**
  * Performs a General HTTP request which calls callback with JSON
- * @param {Function} callback 
- * @param {String} url 
+ * @param {Function} callback
+ * @param {String} url
  */
 const generalRequest = function (callback, url) {
   fetch(url)
@@ -15,7 +15,7 @@ const generalRequest = function (callback, url) {
 }
 /**
  * Takes a card, and attached its dats in a HTML string to "TheList"
- * @param {Card} card 
+ * @param {Card} card
  */
 const putOnPage = function (card) {
   const list = document.getElementById('TheList')
@@ -30,7 +30,7 @@ const putOnPage = function (card) {
 /**
  * Makes request to Trello asking for a given card's attachments
  * HAVE NOT TESTES WITH NON URL ATTACHMENTS
- * @param {Card} card 
+ * @param {Card} card
  */
 const getAttachments = function (card) {
   const url = `https://api.trello.com/1/cards/${card.id}/attachments?&fields=url,&key=${TRELLO_API}&token=${TRELLO_TOKEN}`
@@ -43,7 +43,7 @@ const getAttachments = function (card) {
 /**
  * Gets attachments for each card in cards
  * also end up appending urls to the card object
- * @param {Array} cards 
+ * @param {Array} cards
  */
 const useThem = (cards) => {
   cards.map((card) => getAttachments(card))

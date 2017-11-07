@@ -25,16 +25,20 @@ const contacts = [
 ]
 
 const comps = [
-  { name: 'hero', template: '#hero' },
-  { name: 's-footer', template: '#footer' },
+  { name: 'hero', template: 'hero' },
+  { name: 's-footer', template: 'footer' },
   {
-    name: 'info', template: '#info', methods: { text: (param) => { return store.state.text[param] } }
+    name: 'info', template: 'info', methods: { text: (param) => { return store.state.text[param] } }
   }
 ]
 
+const doubleGetId = (x) => {
+  return document.getElementById(x).import.getElementById(x)
+}
+
 comps.map(e => {
   Vue.component(e.name, {
-    template: e.template,
+    template: doubleGetId(e.template),
     methods: e.methods || {}
   })
 })
@@ -77,7 +81,7 @@ const Contact = {
 const routes = [
   {
     path: '/',
-    component: { template: '#terminal' }
+    component: { template: doubleGetId('terminal') }
   },
   {
     path: '/fun',
