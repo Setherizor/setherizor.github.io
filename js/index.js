@@ -99,7 +99,7 @@ const Contacts = {
       return this.$store.state.contacts
     }
   },
-  template: '#contacts'
+  template: doubleGetId('contacts')
 }
 
 const Contact = {
@@ -111,7 +111,7 @@ const Contact = {
       })[0]
     }
   },
-  template: '#contact'
+  template: doubleGetId('contact')
 }
 
 const routes = [
