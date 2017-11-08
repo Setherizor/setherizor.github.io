@@ -1,0 +1,19 @@
+<script type="text/x-template" id="TheApp">
+  <v-app v-cloak :dark="$store.state.dark" :light="!$store.state.dark">
+      <hero></hero>
+      <main>
+        <v-content>
+          <info></info>
+          <v-container class="text-xs-center" fluid>
+            <router-view></router-view>
+            <br>
+            <br>
+            <v-btn v-for="b in $store.state.buttons" :key="b.index" color="primary" dark round large :href=b.url target="_self" rel="noopener">
+              {{ b.name }} 
+            </v-btn>
+          </v-container>
+          <s-footer></s-footer>
+        </v-content>
+      </main>
+    </v-app>
+</script>

@@ -1,5 +1,5 @@
 const buttons = [
-  { name: 'Projects', url: './projects' },
+  { name: 'Projects', url: '/#/p' },
   { name: 'Who Am I', url: 'WhoAmI' },
   { name: 'Hire Me', url: 'https://www.fiverr.com/sethparrish' },
   { name: 'Resume', url: './resume' }
@@ -29,6 +29,14 @@ const comps = [
   { name: 's-footer', template: 'footer' },
   {
     name: 'info', template: 'info', methods: { text: (param) => { return store.state.text[param] } }
+  },
+  {
+    name: 'projects', template: 'projects', computed: { cards: () => { return store.state.cards } }, methods: {
+      randColor: () => {
+        const colors = ["blue-grey darken-2", "cyan darken-2", "purple", "pink", "red lighten-1", "deep-purple lighten-2", "light-blue lighten-2", "green accent-3", "brown lighten-2"]
+        return colors[Math.floor(Math.random() * colors.length)]
+      }
+    }
   }
 ]
 
@@ -39,27 +47,55 @@ const doubleGetId = (x) => {
 comps.map(e => {
   Vue.component(e.name, {
     template: doubleGetId(e.template),
-    methods: e.methods || {}
+    methods: e.methods || {},
+    computed: e.computed || {}
   })
 })
 
-// use an import: <link id="terminal" rel="import" href="./s.html
-// document.getElementById(e.template.sub).import.getElementById(e.template),
+Vue.component('s-cards', {
+  template: `
+ <v-layout row wrap>
+  <v-flex xs12 v-for="c in this.$store.state.cards" :key="c.id">
+    <v-card :color="randColor()" class="white--text">
+        <v-card-title primary-title>
+            <div class="headline" style="width: 100%;" v-html="c.name"></div>
+            <span v-html="c.desc"></span>
+        </v-card-title>
+        <v-card-actions>
+          <v-layout row wrap>
+            <v-flex xs12>
+              <v-btn v-for="(url, index) in c.urls" :key="c.id" color="primary" :href="url">
+                  {{url.substr(url.lastIndexOf("/") + 1) || "Project"}}
+              </v-btn>
+            </v-flex>
+          </v-layout>
+        </v-card-actions>
+      </v-card>
+  </v-flex>
+</v-layout>`,
+  methods: {
+    randColor: () => {
+      const colors = ["blue-grey darken-2", "cyan darken-2", "purple", "pink", "red lighten-1", "deep-purple lighten-2", "light-blue lighten-2", "green accent-3", "brown lighten-2"]
+      return colors[Math.floor(Math.random() * colors.length)]
+    }
+  }
+})
 
 const store = new Vuex.Store({
   state: {
-    debug: true,
+    dark: true,
     author: 'Seth Parrish',
     pic: 'https://secure.gravatar.com/avatar/f51d027fb674bba15df8fbe8451d7d23',
     contacts: contacts,
     buttons: buttons,
-    text: text
+    text: text,
+    cards: bucket
   }
 })
 
 const Contacts = {
   computed: {
-    contacts () {
+    contacts() {
       return this.$store.state.contacts
     }
   },
@@ -68,7 +104,7 @@ const Contacts = {
 
 const Contact = {
   computed: {
-    contact () {
+    contact() {
       const id = parseInt(this.$route.params.id)
       return this.$store.state.contacts.filter(function (c) {
         return c.id === id
@@ -81,11 +117,15 @@ const Contact = {
 const routes = [
   {
     path: '/',
-    component: { template: doubleGetId('terminal') }
+    component: { name: 'Terminal', template: doubleGetId('terminal') }
   },
   {
     path: '/fun',
     component: { template: `<v-btn color="primary" dark round large href="/funbutton" target="_self" rel="noopener"> Want Some Fun </v-btn>` }
+  },
+  {
+    path: '/p',
+    component: { name: 'Projects', template: doubleGetId('projects') }
   },
   {
     path: '/c',
@@ -97,5 +137,13 @@ const routes = [
   }
 ]
 
+const TheApp = { name: 'TheApp', template: doubleGetId('TheApp') }
+
 const router = new VueRouter({ routes })
-const V = new Vue({ store, router }).$mount('#app')
+const V = new Vue({
+  el: '#app',
+  store,
+  router,
+  components: { TheApp },
+  render: (createElement) => { return createElement(TheApp) }
+})
