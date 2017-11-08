@@ -10,6 +10,9 @@ module.exports = {
       joinTo: 'app.js'
     }
   },
+  paths: {
+    public: './docs'
+  },
   plugins: {
     babel: {
       presets: ['es2015']
