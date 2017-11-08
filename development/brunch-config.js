@@ -11,7 +11,7 @@ module.exports = {
     }
   },
   paths: {
-    public: './docs'
+    public: '../'
   },
   plugins: {
     babel: {
