@@ -1,8 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import App from '../App'
-import homepage from '../views/homepage'
-import {Hello, projectsHolder, terminal} from '../components'
+import { homepage, whoami } from '../views'
+import { Hello, projectsHolder, terminal } from '../components'
 
 Vue.use(Router)
 
@@ -22,6 +21,11 @@ export default new Router({
           component: projectsHolder
         },
       ]
+    },
+    {
+      path: '/whoami',
+      name: 'WhoAmI',
+      component: whoami
     },
     {
       path: '/hi',

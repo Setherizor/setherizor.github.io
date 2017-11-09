@@ -4,7 +4,7 @@ Vue.use(Vuex)
 
 const buttons = [
   { name: 'Projects', url: '/#/p' },
-  { name: 'Who Am I', url: './WhoAmI.html' },
+  { name: 'Who Am I', url: '/#/whoami' },
   { name: 'Hire Me', url: 'https://www.fiverr.com/sethparrish' },
   { name: 'Resume', url: './resume' }
 ]
