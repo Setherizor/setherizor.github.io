@@ -18,7 +18,7 @@ module.exports = {
       presets: ['es2015']
     },
     copyfilemon: {
-      'css':['./node_modules/vuetify/dist/vuetify.min.css'],
+      'css': ['./node_modules/vuetify/dist/vuetify.min.css']
     }
   }
 }

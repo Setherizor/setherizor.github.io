@@ -20,5 +20,5 @@ import projectList from "./projectList.vue"
 export default {
   name: "projectsHolder",
   components: { projectList }
-};
+}
 </script>

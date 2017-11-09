@@ -5,7 +5,7 @@
                 <div class="btns"></div>
             </div>
             <div class="tbody"> λ <span class="command">echo $FAVQUOTE</span>
-                <div class="comment"> {{favQuote}} </div> λ <span class="command">{{ doDaiyly }}</span><br> λ <span class="command">{{remember}}</span><br>
+                <div class="comment"> {{favQuote}} </div> λ <span class="command">{{ doDaily }}</span><br> λ <span class="command">{{remember}}</span><br>
                 <div class="comment"> File Write Successful </div>
                 <div class="prompt">λ <span class="command">What's next...</span> <span class="pulse">_</span></div>
             </div>
@@ -20,11 +20,11 @@ export default {
     return {
       favQuote:
         '"I have no special talent. I am only passionately curious." - Albert Einstein',
-      doDailt: "alias daily= 'sudo me -r * && echo \"You're amazing.\"",
+      doDaily: "alias daily= 'sudo me -r * && echo \"You're amazing.\"",
       remember: 'echo "Never Give Up" > consciousness.js'
-    };
+    }
   }
-};
+}
 </script>
 
 <style>

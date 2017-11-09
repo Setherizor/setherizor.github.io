@@ -63,5 +63,4 @@ const putOnPage = (websites) => {
     parent.innerHTML += attach
   })
 }
-
 putOnPage(websites)

@@ -18,3 +18,12 @@ export default {
   }
 };
 </script>
+
+<style>
+footer {
+  font-family: "Raleway";
+  letter-spacing: 10px;
+  line-height: 2.5em;
+  text-align: center;
+}
+</style>

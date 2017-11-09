@@ -1,3 +1,3 @@
 # My Personal Website
 
-Built with :heart: using [Vue.js](https://vuejs.org/) & [Brunch](http://brunch.io)
+Built with ❤️ using [Vue.js](https://vuejs.org/) & [Brunch](http://brunch.io)

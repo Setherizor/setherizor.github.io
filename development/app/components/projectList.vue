@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import bucket from '../utils/trello'
+import { bucket } from "../utils";
 export default {
   name: "projectList",
   data() {
