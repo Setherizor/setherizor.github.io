@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import { homepage, whoami } from '../views'
+import { homepage, whoami, resume } from '../views'
 import { Hello, projectsHolder, terminal } from '../components'
 
 Vue.use(Router)
@@ -26,6 +26,11 @@ export default new Router({
       path: '/whoami',
       name: 'WhoAmI',
       component: whoami
+    },
+    {
+      path: '/resume',
+      name: 'Resume',
+      component: resume
     },
     {
       path: '/hi',
