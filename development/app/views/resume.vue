@@ -47,7 +47,7 @@
             <li>Location</li>
           </ul>
           <ul class="list-content ">
-            <li>+336 302 2922</li>
+            <li>+336 302 7922</li>
             <li>shparri2@ncsu.edu</li>
             <li>
               <a href="/#/">setherizor.github.io</a>
@@ -60,7 +60,7 @@
         <div class="contact-presentation">
           <h3 class="bold">Education:</h3>
           <div>
-            Bachelors Of Computer Science & Enginerring from North Carolina State University (Almost)
+            Bachelors Of Computer Science & Engineerring from North Carolina State University (Almost)
           </div>
         </div>
 
@@ -120,7 +120,7 @@
         <p>In my spare time, I am coding personal projects, games, libraries, helping friends, spending time with my family,
           or 4x4 Offroading</p>
         <br>
-        <p>My passion is knowledge, and my tool is my Determination, my goal is "42"</p>
+        <p>My passion is knowledge, and my tool is my Determination, my goal is <a href="http://www.realclearscience.com/blog/2015/05/x_reasons_why_42_may_actually_be_the_answer_to_life_the_universe_and_everything.html" target="_blank">"42"</a></p>
       </div>
       <div class="section-wrapper clearfix">
         <h3 class="section-title">Honors</h3>
