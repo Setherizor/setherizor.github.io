@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:200');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons');
+[v-cloak] {display: none}
+:root {
+  --primary: #3dbbff;
+  --secondary: #4eebfc;
+}
+
+.primary {
+    background-color: var(--primary)!important;
+}
+
+.application--dark, body {
+    background: #303030;
+    color: #fff
+}
+
+.transparentbg {
+    background-color: rgba(0, 0, 0, 0.0);
+}
+
+/* toggle this class */
+.color-bg-start {
+    background-color: salmon;
+}
+
+/* toggle class bg-animate-color */
+.bg-animate-color {
+    -webkit-animation: random-bg .5s linear infinite;
+    animation: random-bg .5s linear infinite;
+}
+
+/* add animation to bg color  */
+@-webkit-keyframes random-bg {
+    from {
+        -webkit-filter: hue-rotate(0);
+        filter: hue-rotate(0);
+    }
+    to {
+        -webkit-filter: hue-rotate(360deg);
+        filter: hue-rotate(360deg);
+    }
+}
+@keyframes random-bg {
+    from {
+        -webkit-filter: hue-rotate(0);
+        filter: hue-rotate(0);
+    }
+    to {
+        -webkit-filter: hue-rotate(360deg);
+        filter: hue-rotate(360deg);
+    }
+}

@@ -1,7 +1,7 @@
 <template>
   <v-app v-cloak :dark="dark" :light="!dark">
       <hero></hero>
-      <main>
+      <main :class="{ page, 'color-bg-start': fun, 'bg-animate-color': fun }">
         <v-content>
           <info></info>
           <v-container class="text-xs-center" fluid>
@@ -29,6 +29,11 @@ export default {
       dark: this.$store.state.dark,
       buttons: this.$store.state.buttons
     };
+  },
+  computed: {
+    fun() {
+      return this.$store.state.funColors;
+    }
   },
   components: { hero, info, customFooter }
 };

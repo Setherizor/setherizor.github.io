@@ -22,9 +22,9 @@ export default {
         '"I have no special talent. I am only passionately curious." - Albert Einstein',
       doDaily: "alias daily= 'sudo me -r * && echo \"You're amazing.\"",
       remember: 'echo "Never Give Up" > consciousness.js'
-    }
+    };
   }
-}
+};
 </script>
 
 <style>

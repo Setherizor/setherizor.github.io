@@ -6,7 +6,8 @@ const buttons = [
   { name: 'Projects', url: '/#/p' },
   { name: 'Who Am I', url: '/#/whoami' },
   { name: 'Hire Me', url: 'https://www.fiverr.com/sethparrish' },
-  { name: 'Resume', url: '/#/resume' }
+  { name: 'Resume', url: '/#/resume' },
+  { name: 'Fun Button', url: '/#/fun' }
 ]
 
 const contacts = [
@@ -18,8 +19,14 @@ const contacts = [
 export default new Vuex.Store({
   state: {
     dark: true,
+    funColors: false,
     author: 'Seth Parrish',
     contacts: contacts,
     buttons: buttons,
+  },
+  mutations: {
+    toggleFun: (state) => {
+      return state.funColors = !state.funColors;
+    }
   }
 })

@@ -10,6 +10,10 @@ export default {
 };
 </script>
 
+<style lang="stylus">
+  @require './styles/main';
+</style>
+
 <style>
 fade-enter-active,
 .fade-leave-active {

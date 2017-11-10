@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import { homepage, whoami, resume } from '../views'
-import { Hello, projectsHolder, terminal } from '../components'
+import { Hello, projectsHolder, terminal, funbutton } from '../components'
 
 Vue.use(Router)
 
@@ -20,6 +20,11 @@ export default new Router({
           name: 'Projects',
           component: projectsHolder
         },
+        {
+          path: '/fun',
+          name: 'FunButton',
+          component: funbutton
+        }
       ]
     },
     {

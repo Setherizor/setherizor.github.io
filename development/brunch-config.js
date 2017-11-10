@@ -1,13 +1,16 @@
 module.exports = {
   files: {
     javascripts: {
-      joinTo: 'app.js'
+      joinTo: 'js/app.js'
     },
     stylesheets: {
-      joinTo: 'css/style.css'
-    },
-    templates: {
-      joinTo: 'app.js'
+      joinTo: {
+        'css/style.css': [
+          /\.css$/,
+          /\.styl$/,
+        ],
+        'css/resume.css': /\.scss$/
+      }
     }
   },
   paths: {
@@ -19,6 +22,17 @@ module.exports = {
     },
     copyfilemon: {
       'css': ['./node_modules/vuetify/dist/vuetify.min.css']
+    },
+    stylus: {
+      includeCss: true
+    },
+    sass: {
+      sourceMapEmbed: true,
+      outFile: 'ss.css'
     }
+    // },
+    // options: {
+    //   includePaths: ['node_modules/foundation/scss']
+    // }
   }
 }
