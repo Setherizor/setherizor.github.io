@@ -15,20 +15,14 @@ module.exports = {
     },
     stylesheets: {
       joinTo: {
-        'css/style.css': [
-          /\.css$/,
-          /\.styl$/,
-        ],
+        'css/style.css': /\.css$/,
         'css/resume.css': /\.scss$/
       }
     }
   },
   plugins: {
     copyfilemon: {
-      'css': ['./node_modules/vuetify/dist/vuetify.min.css']
-    },
-    stylus: {
-      includeCss: true
+      'css': ['./node_modules/vuetify/dist/vuetify.css'] //min?
     },
     sass: {
       sourceMapEmbed: true,

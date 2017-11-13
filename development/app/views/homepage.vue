@@ -1,8 +1,7 @@
 <template>
   <v-app v-cloak :dark="dark" :light="!dark">
       <hero></hero>
-      <main :class="{ page, 'color-bg-start': funColors, 'bg-animate-color': funColors }">
-        <v-content>
+        <v-content :class="{ page, 'color-bg-start': funColors, 'bg-animate-color': funColors }">
           <info></info>
           <v-container class="text-xs-center" fluid>
             <transition name="fade">
@@ -16,7 +15,6 @@
           </v-container>
           <customFooter></customFooter>
         </v-content>
-      </main>
     </v-app>
 </template>
 
