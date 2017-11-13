@@ -1,8 +1,16 @@
 module.exports = {
+  overrides: {
+    production: {
+      optimize: true,
+      sourceMaps: false
+    }
+  },
   paths: {
     public: '../'
   },
-  sourceMaps: false,
+  npm: {
+    styles: { vuetify: ['dist/vuetify.min.css'] }
+  },
   files: {
     javascripts: {
       joinTo: {
@@ -16,14 +24,12 @@ module.exports = {
     stylesheets: {
       joinTo: {
         'css/style.css': /\.css$/,
+        'css/vendor.css': /^node_modules/,
         'css/resume.css': /\.scss$/
       }
     }
   },
   plugins: {
-    copyfilemon: {
-      'css': ['./node_modules/vuetify/dist/vuetify.css'] //min?
-    },
     sass: {
       sourceMapEmbed: true,
       outFile: 'ss.css'

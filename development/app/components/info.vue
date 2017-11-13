@@ -45,7 +45,7 @@ blockquote {
   font-style: italic;
   background: repeating-linear-gradient(45deg, #ff1c42 0%, #9036ff 100%);
   font-weight: 900;
-  border-left: 5px solid var(--secondary);
+  border-left: 5px solid #4eebfc;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
