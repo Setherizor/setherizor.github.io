@@ -1,19 +1,17 @@
 <template>
    <v-footer app>
         <v-flex xs12>
-            <div class="white--text text-xs-center">
-                {{ author }}  <br> {{ new Date().getFullYear() }}
-            </div>
+            <div class="white--text text-xs-center" v-html="text"></div>
         </v-flex>
     </v-footer>
 </template>
 
 <script>
 export default {
-  name: "customFooter",
+  name: "CustomFooter",
   data() {
     return {
-      author: this.$store.state.author
+      text: `${this.$store.state.author} - &copy; ${new Date().getFullYear()}`
     };
   }
 };

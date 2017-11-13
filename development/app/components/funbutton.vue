@@ -1,17 +1,14 @@
 <template>
   <v-flex md6 sm10 xs12 offset-md3 offset-sm1 offset-xs0>
-    <button @click="$store.commit('toggleFun')" :class="{ 'start-fun': fun, 'fun-btn': true }">Press for Fun!</button>
+    <button @click="$store.commit('toggleFun')" :class="{ 'start-fun': funColors, 'fun-btn': true }">Press for Fun!</button>
   </v-flex>
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
-  name: "funbutton",
-  computed: {
-    fun() {
-      return this.$store.state.funColors;
-    }
-  },
+  name: "FunButton",
+  computed: mapState(["funColors"])
 };
 </script>
 

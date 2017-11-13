@@ -18,7 +18,7 @@
 <script>
 import projectList from "./projectList.vue";
 export default {
-  name: "projectsHolder",
+  name: "ProjectsHolder",
   components: { projectList }
 };
 </script>

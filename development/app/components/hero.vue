@@ -1,7 +1,7 @@
 <template>
   <v-parallax src="assets/hero.jpeg" height="300">
     <v-layout column align-center justify-center class="white--text">
-        <div v-bind:class="{ 'gradient-border': true, 'bg-animate-color': fun}" id="box">
+        <div v-bind:class="{ 'gradient-border': true, 'bg-animate-color': funColors}" id="box">
             {{ author }}
         </div>
     </v-layout>
@@ -9,18 +9,10 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
-  name: "hero",
-  data() {
-    return {
-      author: this.$store.state.author
-    };
-  },
-  computed: {
-    fun() {
-      return this.$store.state.funColors;
-    }
-  },
+  name: "Hero",
+  computed: mapState(["funColors", "author"])
 };
 </script>
 

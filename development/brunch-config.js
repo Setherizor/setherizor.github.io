@@ -1,6 +1,16 @@
 module.exports = {
+  paths: {
+    public: '../'
+  },
+  sourceMaps: false,
   files: {
     javascripts: {
+      joinTo: {
+        'js/vendor.js': /^(?!app)/,
+        'js/app.js': /^app/
+      }
+    },
+    templates: {
       joinTo: 'js/app.js'
     },
     stylesheets: {
@@ -13,13 +23,7 @@ module.exports = {
       }
     }
   },
-  paths: {
-    public: '../'
-  },
   plugins: {
-    babel: {
-      presets: ['es2015']
-    },
     copyfilemon: {
       'css': ['./node_modules/vuetify/dist/vuetify.min.css']
     },
@@ -29,10 +33,14 @@ module.exports = {
     sass: {
       sourceMapEmbed: true,
       outFile: 'ss.css'
-    }
-    // },
-    // options: {
-    //   includePaths: ['node_modules/foundation/scss']
-    // }
+    },
+    uglify: {
+      mangle: true,
+      compress: {
+        global_defs: {
+          DEBUG: false
+        }
+      }
+    },
   }
 }

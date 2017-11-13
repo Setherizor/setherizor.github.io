@@ -42,5 +42,13 @@ export default new Router({
       name: 'Hello',
       component: Hello
     }
-  ]
+  ],
+  scrollBehavior(to, from, savedPosition) {
+    var noScroll = ['FunButton','Projects','Terminal']
+    if (noScroll.includes(to.name)) {
+      return false
+    } else {
+      return { x: 0, y: 0 }
+    }
+  }
 })

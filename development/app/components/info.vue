@@ -16,7 +16,7 @@
 
 <script>
 export default {
-  name: "info",
+  name: "PersonalInfo",
   data() {
     return {
       text: {

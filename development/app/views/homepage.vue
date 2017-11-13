@@ -1,7 +1,7 @@
 <template>
   <v-app v-cloak :dark="dark" :light="!dark">
       <hero></hero>
-      <main :class="{ page, 'color-bg-start': fun, 'bg-animate-color': fun }">
+      <main :class="{ page, 'color-bg-start': funColors, 'bg-animate-color': funColors }">
         <v-content>
           <info></info>
           <v-container class="text-xs-center" fluid>
@@ -21,20 +21,11 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import { hero, info, customFooter } from "../components";
 export default {
   name: "Homepage",
-  data() {
-    return {
-      dark: this.$store.state.dark,
-      buttons: this.$store.state.buttons
-    };
-  },
-  computed: {
-    fun() {
-      return this.$store.state.funColors;
-    }
-  },
+  computed: mapState(["dark", "buttons", "funColors"]),
   components: { hero, info, customFooter }
 };
 </script>
