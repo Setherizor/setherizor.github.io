@@ -21,13 +21,17 @@
 </template>
 
 <script>
-import { bucket } from "../utils";
 export default {
   name: "projectList",
   data() {
     return {
-      cards: bucket
+      cards: []
     };
+  },
+  mounted() {
+    fetch(`https://oex.glitch.me/seth/projects`)
+      .then(resp => resp.json())
+      .then(data => (this.cards = data));
   },
   methods: {
     randColor: () => {

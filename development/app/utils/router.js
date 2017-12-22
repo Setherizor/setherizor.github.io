@@ -44,7 +44,7 @@ export default new Router({
     }
   ],
   scrollBehavior(to, from, savedPosition) {
-    var noScroll = ['FunButton','Projects','Terminal']
+    var noScroll = ['FunButton', 'Projects', 'Terminal']
     if (noScroll.includes(to.name)) {
       return false
     } else {

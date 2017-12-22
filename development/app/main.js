@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueAnalytics from 'vue-analytics'
-import App from './App'
+import App from './App.vue'
 import { router, store } from './utils'
 import 'vueify/lib/insert-css' // required for .vue file <style> tags
 import TweenMax from 'gsap';
