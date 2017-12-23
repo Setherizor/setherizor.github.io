@@ -1,7 +1,7 @@
 <template>
   <div id="parent">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <a v-for="(s, index) in sites" :key="index" :href="s.url" rel="noopener" id="child" :class="getIcon(index)"></a>
+    <a v-for="(s, index) in sites" :key="index" :href="proto + s.url" rel="noopener" id="child" :class="getIcon(index)"></a>
   </div>
 </template>
 
@@ -54,7 +54,7 @@ const websites = [
   },
   {
     name: "Devrant",
-    url: "www.devrant.io/users/Setherizor",
+    url: "devrant.io/users/Setherizor",
     icon: "fa-code"
   },
   {
@@ -68,6 +68,7 @@ export default {
   name: "WhoAmI",
   data() {
     return {
+      proto: 'https://',
       sites: websites
     };
   },
