@@ -59,7 +59,7 @@ const websites = [
   },
   {
     name: "Personal Site",
-    url: "/#/",
+    url: window.location.host,
     icon: "fa-desktop"
   }
 ];
