@@ -14,5 +14,5 @@
 # will take these settings and override their
 # current ones.
 [context.v2]
-  command = "hugo"
+  command = ""
   publish = "public"
