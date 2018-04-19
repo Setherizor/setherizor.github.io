@@ -1,18 +1,18 @@
-baseurl                 = "/"   # Your domain name. Must end with "/"
+baseurl                 = "/"                               # Your domain name. Must end with "/"
 languageCode            = "en-us"
 title                   = "Seth Parrish"
 theme                   = "introduction"
 enforce_ssl             = true
-builddrafts             = false                              # Include pages with draft status of true
+builddrafts             = false                             # Include pages with draft status of true
 canonifyurls            = true                              # Turns relative urls into absolute urls
 enableEmoji             = true
 # disqusshortname       = "xxx"                             # Enable Disqus for comments
 # googleAnalytics       = "xxx"
 
 [params]    
-    blogHead            = "ParrishDevs"                            # Full name shows on blog post pages
+    blogHead            = "ParrishDevs"                     # Full name shows on blog post pages
     firstName           = "Seth"                            # First name shows in introduction on main page
-    tagLine             = "Code Wizard 🔥 :computer:, Student :pencil2:, Friend :laughing:"    # Appears after the introduction
+    tagLine             = "Code Wizard, Student, Friend"    # Appears after the introduction
     introHeight         = "large"                           # Input either 'medium' or 'large' or 'fullheight'
     themeStyle          = "dark"                            # Choose 'light' or 'dark'
     avatar              = "img/profile.jpg"                 # Path to image in static folder eg. img/avatar.png, or comment out to remove
@@ -27,10 +27,10 @@ enableEmoji             = true
     pygmentsStyle       = "monokai"                         # https://help.farbox.com/pygments.html
     pygmentsCodefences  = true
     footerText          = "Seth Parrish - © 2018"           # Text to show in footer (overrides default text)
-    fadeIn              = true                             # Turn on/off the fade-in effect
+    fadeIn              = true                              # Turn on/off the fade-in effect
     customCSS           = []                                # Include custom css files e.g. ["css/foo.css", "css/bar.css"]
 
-    showBlog            = false                              # Show Blog section on home page
+    showBlog            = false                             # Show Blog section on home page
     showProjects        = true                              # Show Projects section on home page
     projectColumns      = "3"                               # Choose "2" or "3" columns for projects section
     placeHolderimg      = "/img/workday.jpg"                # For Projects without image
