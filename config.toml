@@ -41,7 +41,7 @@ enableEmoji             = true
     # Share buttons
     shareTwitter        = true
     shareFacebook       = true
-    sharePinterest      = false
+    sharePinterest      = true
     shareGooglePlus     = true
 
 # Social icons appear in introduction and contact section. Add as many more as you like.
